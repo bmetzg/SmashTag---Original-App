@@ -47,7 +47,7 @@
                                             <action selector="signOut:" destination="uMT-A3-F60" eventType="touchUpInside" id="Adq-Cs-4xZ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendly Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUI-XH-ETH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friendly Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUI-XH-ETH" userLabel="Smash Tag">
                                         <rect key="frame" x="0.0" y="1" width="200" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="K4h-1Y-mSS"/>

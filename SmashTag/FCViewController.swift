@@ -23,12 +23,14 @@ import GooglePlacePicker
 // MARK: - FCViewController
 
 class FCViewController: UIViewController, UINavigationControllerDelegate {
-    
+    private var placePicker: GMSPlacePicker?
+    var mapViewController: BackgroundMapViewController?
+
     // MARK: Properties
     
     var ref: FIRDatabaseReference!
     var messages: [FIRDataSnapshot]! = []
-    var msglength: NSNumber = 1000
+    var msglength: NSNumber = 255
     var storageRef: FIRStorageReference!
     var remoteConfig: FIRRemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
@@ -256,7 +258,7 @@ class FCViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func didTapAddPhoto(_ sender: AnyObject) {
-        returnCurrentBus()
+        //returnCurrentBus()
         pickAPlace ()
         /*
         let picker = UIImagePickerController()
@@ -309,7 +311,8 @@ class FCViewController: UIViewController, UINavigationControllerDelegate {
                 // Create the next view controller we are going to display and present it.
                 let nextScreen = PlaceDetailViewController(place: place)
                 self.splitPaneViewController?.push(viewController: nextScreen, animated: false)
-                //self.mapViewController?.coordinate = place.coordinate
+                self.mapViewController?.coordinate = place.coordinate
+                print ( "coordinate \(place.coordinate)")
             } else if error != nil {
                 // In your own app you should handle this better, but for the demo we are just going to log
                 // a message.
@@ -319,7 +322,7 @@ class FCViewController: UIViewController, UINavigationControllerDelegate {
             }
             
             // Release the reference to the place picker, we don't need it anymore and it can be freed.
-            //self.placePicker = nil
+           self.placePicker = nil
 
         }
     }
