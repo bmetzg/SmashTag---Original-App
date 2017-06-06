@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		563BE50B1EE7048F00309758 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5041EE7048F00309758 /* CGRect+Extensions.swift */; };
+		563BE50C1EE7048F00309758 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5051EE7048F00309758 /* NotificationObserver.swift */; };
+		563BE50D1EE7048F00309758 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5061EE7048F00309758 /* RoundedButton.swift */; };
+		563BE50E1EE7048F00309758 /* SDKDemoAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5071EE7048F00309758 /* SDKDemoAPIKey.swift */; };
+		563BE50F1EE7048F00309758 /* ShadowLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5081EE7048F00309758 /* ShadowLineView.swift */; };
+		563BE5101EE7048F00309758 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5091EE7048F00309758 /* ShadowView.swift */; };
+		563BE5111EE7048F00309758 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE50A1EE7048F00309758 /* Styles.swift */; };
 		5653AEB81EE5DD980086EE16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5653AEB71EE5DD980086EE16 /* GoogleService-Info.plist */; };
 		5653AEBA1EE5DDA80086EE16 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5653AEB91EE5DDA80086EE16 /* Info.plist */; };
 		5653AEBC1EE5DDB90086EE16 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5653AEBB1EE5DDB90086EE16 /* Default-568h@2x.png */; };
@@ -15,6 +22,18 @@
 		56B5B60F1EE5DE2F0091CEAC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B5B60B1EE5DE2F0091CEAC /* LaunchScreen.xib */; };
 		56B5B6101EE5DE2F0091CEAC /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B5B60C1EE5DE2F0091CEAC /* Roboto-Regular.ttf */; };
 		56B5B6111EE5DE2F0091CEAC /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B5B60D1EE5DE2F0091CEAC /* RobotoMono-Regular.ttf */; };
+		56B67D6F1EE6FE380086681B /* BackgroundMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D611EE6FE380086681B /* BackgroundMapViewController.swift */; };
+		56B67D701EE6FE380086681B /* BaseContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D621EE6FE380086681B /* BaseContainerViewController.swift */; };
+		56B67D711EE6FE380086681B /* InsetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D631EE6FE380086681B /* InsetViewController.swift */; };
+		56B67D721EE6FE380086681B /* SplitPaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D641EE6FE380086681B /* SplitPaneViewController.swift */; };
+		56B67D731EE6FE380086681B /* PickAPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D661EE6FE380086681B /* PickAPlaceViewController.swift */; };
+		56B67D741EE6FE380086681B /* PickAPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B67D671EE6FE380086681B /* PickAPlaceViewController.xib */; };
+		56B67D751EE6FE380086681B /* PlaceAttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D691EE6FE380086681B /* PlaceAttributeCell.swift */; };
+		56B67D761EE6FE380086681B /* PlaceAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B67D6A1EE6FE380086681B /* PlaceAttributeCell.xib */; };
+		56B67D771EE6FE380086681B /* PlaceDetailTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D6B1EE6FE380086681B /* PlaceDetailTableViewDataSource.swift */; };
+		56B67D791EE6FE380086681B /* PlaceNameHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D6D1EE6FE380086681B /* PlaceNameHeader.swift */; };
+		56B67D7A1EE6FE380086681B /* PlaceNameHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B67D6E1EE6FE380086681B /* PlaceNameHeader.xib */; };
+		56FC3CB41EE701E2006338FA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */; };
 		56FC77C41EE5DD22007E2230 /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C31EE5DD22007E2230 /* FCViewController.swift */; };
 		56FC77C61EE5DD27007E2230 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C51EE5DD27007E2230 /* AppDelegate.swift */; };
 		56FC77C81EE5DD2D007E2230 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C71EE5DD2D007E2230 /* Constants.swift */; };
@@ -23,6 +42,13 @@
 
 /* Begin PBXFileReference section */
 		47BDA9BA1B03D338F2B3A7F7 /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		563BE5041EE7048F00309758 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		563BE5051EE7048F00309758 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
+		563BE5061EE7048F00309758 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		563BE5071EE7048F00309758 /* SDKDemoAPIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKDemoAPIKey.swift; sourceTree = "<group>"; };
+		563BE5081EE7048F00309758 /* ShadowLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLineView.swift; sourceTree = "<group>"; };
+		563BE5091EE7048F00309758 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		563BE50A1EE7048F00309758 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		5653AEB71EE5DD980086EE16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SmashTag/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5653AEB91EE5DDA80086EE16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmashTag/Info.plist; sourceTree = SOURCE_ROOT; };
 		5653AEBB1EE5DDB90086EE16 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -31,6 +57,18 @@
 		56B5B60B1EE5DE2F0091CEAC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		56B5B60C1EE5DE2F0091CEAC /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		56B5B60D1EE5DE2F0091CEAC /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
+		56B67D611EE6FE380086681B /* BackgroundMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundMapViewController.swift; sourceTree = "<group>"; };
+		56B67D621EE6FE380086681B /* BaseContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseContainerViewController.swift; sourceTree = "<group>"; };
+		56B67D631EE6FE380086681B /* InsetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetViewController.swift; sourceTree = "<group>"; };
+		56B67D641EE6FE380086681B /* SplitPaneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitPaneViewController.swift; sourceTree = "<group>"; };
+		56B67D661EE6FE380086681B /* PickAPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickAPlaceViewController.swift; sourceTree = "<group>"; };
+		56B67D671EE6FE380086681B /* PickAPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickAPlaceViewController.xib; sourceTree = "<group>"; };
+		56B67D691EE6FE380086681B /* PlaceAttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAttributeCell.swift; sourceTree = "<group>"; };
+		56B67D6A1EE6FE380086681B /* PlaceAttributeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceAttributeCell.xib; sourceTree = "<group>"; };
+		56B67D6B1EE6FE380086681B /* PlaceDetailTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewDataSource.swift; sourceTree = "<group>"; };
+		56B67D6D1EE6FE380086681B /* PlaceNameHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceNameHeader.swift; sourceTree = "<group>"; };
+		56B67D6E1EE6FE380086681B /* PlaceNameHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceNameHeader.xib; sourceTree = "<group>"; };
+		56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		56FC77C31EE5DD22007E2230 /* FCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCViewController.swift; path = SmashTag/FCViewController.swift; sourceTree = SOURCE_ROOT; };
 		56FC77C51EE5DD27007E2230 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmashTag/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56FC77C71EE5DD2D007E2230 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = SmashTag/Constants.swift; sourceTree = SOURCE_ROOT; };
@@ -64,6 +102,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		563BE5031EE7048F00309758 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				563BE5041EE7048F00309758 /* CGRect+Extensions.swift */,
+				563BE5051EE7048F00309758 /* NotificationObserver.swift */,
+				563BE5061EE7048F00309758 /* RoundedButton.swift */,
+				563BE5071EE7048F00309758 /* SDKDemoAPIKey.swift */,
+				563BE5081EE7048F00309758 /* ShadowLineView.swift */,
+				563BE5091EE7048F00309758 /* ShadowView.swift */,
+				563BE50A1EE7048F00309758 /* Styles.swift */,
+			);
+			name = Support;
+			path = SmashTag/Support;
+			sourceTree = SOURCE_ROOT;
+		};
 		566586EE1EE5FBBC008926CC /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +136,50 @@
 			);
 			path = shared;
 			sourceTree = SOURCE_ROOT;
+		};
+		56B67D5F1EE6FE380086681B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				56B67D601EE6FE380086681B /* Containers */,
+				56B67D651EE6FE380086681B /* PickAPlace */,
+				56B67D681EE6FE380086681B /* PlaceDetail */,
+			);
+			name = ViewControllers;
+			path = SmashTag/ViewControllers;
+			sourceTree = SOURCE_ROOT;
+		};
+		56B67D601EE6FE380086681B /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				56B67D611EE6FE380086681B /* BackgroundMapViewController.swift */,
+				56B67D621EE6FE380086681B /* BaseContainerViewController.swift */,
+				56B67D631EE6FE380086681B /* InsetViewController.swift */,
+				56B67D641EE6FE380086681B /* SplitPaneViewController.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		56B67D651EE6FE380086681B /* PickAPlace */ = {
+			isa = PBXGroup;
+			children = (
+				56B67D661EE6FE380086681B /* PickAPlaceViewController.swift */,
+				56B67D671EE6FE380086681B /* PickAPlaceViewController.xib */,
+			);
+			path = PickAPlace;
+			sourceTree = "<group>";
+		};
+		56B67D681EE6FE380086681B /* PlaceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				56B67D691EE6FE380086681B /* PlaceAttributeCell.swift */,
+				56B67D6A1EE6FE380086681B /* PlaceAttributeCell.xib */,
+				56B67D6B1EE6FE380086681B /* PlaceDetailTableViewDataSource.swift */,
+				56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */,
+				56B67D6D1EE6FE380086681B /* PlaceNameHeader.swift */,
+				56B67D6E1EE6FE380086681B /* PlaceNameHeader.xib */,
+			);
+			path = PlaceDetail;
+			sourceTree = "<group>";
 		};
 		5F5A53431ADE670C00F81DF0 = {
 			isa = PBXGroup;
@@ -106,11 +203,13 @@
 		5F5A537A1ADE67D500F81DF0 /* SmashTag */ = {
 			isa = PBXGroup;
 			children = (
+				563BE5031EE7048F00309758 /* Support */,
 				566586EE1EE5FBBC008926CC /* Base.lproj */,
 				56B5B6091EE5DE2F0091CEAC /* shared */,
 				56FC77C71EE5DD2D007E2230 /* Constants.swift */,
 				56FC77C51EE5DD27007E2230 /* AppDelegate.swift */,
 				56FC77C31EE5DD22007E2230 /* FCViewController.swift */,
+				56B67D5F1EE6FE380086681B /* ViewControllers */,
 				5F5A537B1ADE67D500F81DF0 /* Supporting Files */,
 			);
 			name = SmashTag;
@@ -169,8 +268,9 @@
 				TargetAttributes = {
 					5F5A53781ADE67D500F81DF0 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 37D2GXFCQK;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -207,12 +307,15 @@
 			files = (
 				56B5B6101EE5DE2F0091CEAC /* Roboto-Regular.ttf in Resources */,
 				56B5B60E1EE5DE2F0091CEAC /* Images.xcassets in Resources */,
+				56B67D7A1EE6FE380086681B /* PlaceNameHeader.xib in Resources */,
 				5653AEBC1EE5DDB90086EE16 /* Default-568h@2x.png in Resources */,
 				566586EF1EE5FBBC008926CC /* Main.storyboard in Resources */,
 				5653AEB81EE5DD980086EE16 /* GoogleService-Info.plist in Resources */,
 				56B5B60F1EE5DE2F0091CEAC /* LaunchScreen.xib in Resources */,
 				5653AEBA1EE5DDA80086EE16 /* Info.plist in Resources */,
 				56B5B6111EE5DE2F0091CEAC /* RobotoMono-Regular.ttf in Resources */,
+				56B67D761EE6FE380086681B /* PlaceAttributeCell.xib in Resources */,
+				56B67D741EE6FE380086681B /* PickAPlaceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,9 +374,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563BE5101EE7048F00309758 /* ShadowView.swift in Sources */,
 				56FC77C61EE5DD27007E2230 /* AppDelegate.swift in Sources */,
+				563BE50D1EE7048F00309758 /* RoundedButton.swift in Sources */,
 				56FC77C41EE5DD22007E2230 /* FCViewController.swift in Sources */,
+				56B67D701EE6FE380086681B /* BaseContainerViewController.swift in Sources */,
+				56B67D751EE6FE380086681B /* PlaceAttributeCell.swift in Sources */,
 				56FC77C81EE5DD2D007E2230 /* Constants.swift in Sources */,
+				56B67D721EE6FE380086681B /* SplitPaneViewController.swift in Sources */,
+				56B67D731EE6FE380086681B /* PickAPlaceViewController.swift in Sources */,
+				563BE50E1EE7048F00309758 /* SDKDemoAPIKey.swift in Sources */,
+				563BE50B1EE7048F00309758 /* CGRect+Extensions.swift in Sources */,
+				563BE50C1EE7048F00309758 /* NotificationObserver.swift in Sources */,
+				56B67D771EE6FE380086681B /* PlaceDetailTableViewDataSource.swift in Sources */,
+				563BE5111EE7048F00309758 /* Styles.swift in Sources */,
+				56B67D711EE6FE380086681B /* InsetViewController.swift in Sources */,
+				56FC3CB41EE701E2006338FA /* PlaceDetailViewController.swift in Sources */,
+				56B67D791EE6FE380086681B /* PlaceNameHeader.swift in Sources */,
+				56B67D6F1EE6FE380086681B /* BackgroundMapViewController.swift in Sources */,
+				563BE50F1EE7048F00309758 /* ShadowLineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,14 +497,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 37D2GXFCQK;
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				INFOPLIST_FILE = "$(SRCROOT)/SmashTag/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.udacity.friendlychat;
+				PRODUCT_BUNDLE_IDENTIFIER = "Metzger-SmashTag";
 				PRODUCT_NAME = SmashTag;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
@@ -400,13 +520,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 37D2GXFCQK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/SmashTag/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.udacity.friendlychat;
+				PRODUCT_BUNDLE_IDENTIFIER = "Metzger-SmashTag";
 				PRODUCT_NAME = SmashTag;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;

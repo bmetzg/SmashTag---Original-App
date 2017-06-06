@@ -17,6 +17,10 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import GooglePlaces
+import GooglePlacePicker
+import GoogleMaps
+
 
 // MARK: - AppDelegate: UIResponder, UIApplicationDelegate
 
@@ -32,8 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
         FIRApp.configure()
-        print ("FIRApp")
         
+        GMSPlacesClient.provideAPIKey("AIzaSyDOpenM8InLOsYyFJodeFRSQAkQ0mOLyD8")
+        GMSServices.provideAPIKey("AIzaSyDOpenM8InLOsYyFJodeFRSQAkQ0mOLyD8")
         
         return true
     }

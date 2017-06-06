@@ -18,6 +18,7 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
+import GooglePlacePicker
 
 // MARK: - FCViewController
 
@@ -207,6 +208,7 @@ class FCViewController: UIViewController, UINavigationControllerDelegate {
         print ( data )
         ref.child("messages").childByAutoId().setValue(mdata)
         
+        
     }
     
     func sendPhotoMessage(photoData: Data) {
@@ -254,10 +256,14 @@ class FCViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func didTapAddPhoto(_ sender: AnyObject) {
+        returnCurrentBus()
+        pickAPlace ()
+        /*
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
+ */
     }
     
     @IBAction func signOut(_ sender: UIButton) {
@@ -289,7 +295,70 @@ class FCViewController: UIViewController, UINavigationControllerDelegate {
     @IBAction func tappedView(_ sender: AnyObject) {
         resignTextfield()
     }
+    
+    func pickAPlace () {
+        // Create a place picker.
+        let config = GMSPlacePickerConfig(viewport: nil)
+        let placePicker = GMSPlacePicker(config: config)
+        
+        // Present it fullscreen.
+        placePicker.pickPlace { (place, error) in
+            
+            // Handle the selection if it was successful.
+            if let place = place {
+                // Create the next view controller we are going to display and present it.
+                let nextScreen = PlaceDetailViewController(place: place)
+                self.splitPaneViewController?.push(viewController: nextScreen, animated: false)
+                //self.mapViewController?.coordinate = place.coordinate
+            } else if error != nil {
+                // In your own app you should handle this better, but for the demo we are just going to log
+                // a message.
+                NSLog("An error occurred while picking a place: \(error)")
+            } else {
+                NSLog("Looks like the place picker was canceled by the user")
+            }
+            
+            // Release the reference to the place picker, we don't need it anymore and it can be freed.
+            //self.placePicker = nil
+
+        }
+    }
+        
+    func returnCurrentBus ( ) {
+        
+        let locationManager = CLLocationManager()
+        // For getting the user permission to use location service when the app is running
+        locationManager.requestWhenInUseAuthorization()
+        // For getting the user permission to use location service always
+        //locationManager.requestAlwaysAuthorization()
+        
+        let placesClient = GMSPlacesClient.shared()
+        print ("return current bus")
+        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            if let placeLikelihoodList = placeLikelihoodList {
+                for likelihood in placeLikelihoodList.likelihoods {
+                    let place = likelihood.place
+                    print("Current Place name \(place.name) at likelihood \(likelihood.likelihood)")
+                    print("Current Place address \(place.formattedAddress)")
+                    print("Current Place attributions \(place.attributions)")
+                    print("Current PlaceID \(place.placeID)")
+                }
+            }
+        })
+        
+    }
+
+
+    
+    
+
 }
+
 
 // MARK: - FCViewController: UITableViewDelegate, UITableViewDataSource
 
@@ -487,3 +556,4 @@ extension FCViewController {
         NotificationCenter.default.removeObserver(self)
     }
 }
+

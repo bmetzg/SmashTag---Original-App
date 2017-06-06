@@ -109,6 +109,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "FirebaseUI/FirebaseUIFrameworks/FirebaseTwitterAuthUI/Frameworks/FirebaseTwitterAuthUI.framework/ic_twitter@2x.png"
   install_resource "FirebaseUI/FirebaseUIFrameworks/FirebaseTwitterAuthUI/Frameworks/FirebaseTwitterAuthUI.framework/ic_twitter@3x.png"
   install_resource "FirebaseUI/FirebaseUIFrameworks/FirebaseTwitterAuthUI/Frameworks/FirebaseTwitterAuthUI.framework/en.lproj"
+  install_resource "GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
+  install_resource "GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle"
+  install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "TwitterKit/iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle"
 fi
@@ -142,6 +145,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "FirebaseUI/FirebaseUIFrameworks/FirebaseTwitterAuthUI/Frameworks/FirebaseTwitterAuthUI.framework/ic_twitter@2x.png"
   install_resource "FirebaseUI/FirebaseUIFrameworks/FirebaseTwitterAuthUI/Frameworks/FirebaseTwitterAuthUI.framework/ic_twitter@3x.png"
   install_resource "FirebaseUI/FirebaseUIFrameworks/FirebaseTwitterAuthUI/Frameworks/FirebaseTwitterAuthUI.framework/en.lproj"
+  install_resource "GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
+  install_resource "GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle"
+  install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "TwitterKit/iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle"
 fi
