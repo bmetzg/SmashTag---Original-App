@@ -14,6 +14,7 @@
 		563BE50F1EE7048F00309758 /* ShadowLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5081EE7048F00309758 /* ShadowLineView.swift */; };
 		563BE5101EE7048F00309758 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5091EE7048F00309758 /* ShadowView.swift */; };
 		563BE5111EE7048F00309758 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE50A1EE7048F00309758 /* Styles.swift */; };
+		563BE5151EE7573C00309758 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BE5141EE7573C00309758 /* LogInViewController.swift */; };
 		5653AEB81EE5DD980086EE16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5653AEB71EE5DD980086EE16 /* GoogleService-Info.plist */; };
 		5653AEBA1EE5DDA80086EE16 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5653AEB91EE5DDA80086EE16 /* Info.plist */; };
 		5653AEBC1EE5DDB90086EE16 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5653AEBB1EE5DDB90086EE16 /* Default-568h@2x.png */; };
@@ -33,6 +34,8 @@
 		56B67D771EE6FE380086681B /* PlaceDetailTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D6B1EE6FE380086681B /* PlaceDetailTableViewDataSource.swift */; };
 		56B67D791EE6FE380086681B /* PlaceNameHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B67D6D1EE6FE380086681B /* PlaceNameHeader.swift */; };
 		56B67D7A1EE6FE380086681B /* PlaceNameHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B67D6E1EE6FE380086681B /* PlaceNameHeader.xib */; };
+		56DFEF561EE8869100F3082C /* PlaceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DFEF551EE8869100F3082C /* PlaceDetailViewController.xib */; };
+		56DFEF581EE8885200F3082C /* PlacePickerDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DFEF571EE8885200F3082C /* PlacePickerDemoAssets.xcassets */; };
 		56FC3CB41EE701E2006338FA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */; };
 		56FC77C41EE5DD22007E2230 /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C31EE5DD22007E2230 /* FCViewController.swift */; };
 		56FC77C61EE5DD27007E2230 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C51EE5DD27007E2230 /* AppDelegate.swift */; };
@@ -49,6 +52,7 @@
 		563BE5081EE7048F00309758 /* ShadowLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLineView.swift; sourceTree = "<group>"; };
 		563BE5091EE7048F00309758 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		563BE50A1EE7048F00309758 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		563BE5141EE7573C00309758 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = SOURCE_ROOT; };
 		5653AEB71EE5DD980086EE16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SmashTag/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5653AEB91EE5DDA80086EE16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmashTag/Info.plist; sourceTree = SOURCE_ROOT; };
 		5653AEBB1EE5DDB90086EE16 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		56B67D6B1EE6FE380086681B /* PlaceDetailTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewDataSource.swift; sourceTree = "<group>"; };
 		56B67D6D1EE6FE380086681B /* PlaceNameHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceNameHeader.swift; sourceTree = "<group>"; };
 		56B67D6E1EE6FE380086681B /* PlaceNameHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceNameHeader.xib; sourceTree = "<group>"; };
+		56DFEF551EE8869100F3082C /* PlaceDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceDetailViewController.xib; sourceTree = "<group>"; };
+		56DFEF571EE8885200F3082C /* PlacePickerDemoAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = PlacePickerDemoAssets.xcassets; path = ../../../../../var/folders/c1/btx3zr5n10l0xc5jk982xlwc0000gq/T/CocoaPods/Try/GooglePlacePicker/Example/GooglePlacePickerDemos/Resources/PlacePickerDemoAssets.xcassets; sourceTree = "<group>"; };
 		56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		56FC77C31EE5DD22007E2230 /* FCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCViewController.swift; path = SmashTag/FCViewController.swift; sourceTree = SOURCE_ROOT; };
 		56FC77C51EE5DD27007E2230 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmashTag/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -174,6 +180,7 @@
 				56B67D691EE6FE380086681B /* PlaceAttributeCell.swift */,
 				56B67D6A1EE6FE380086681B /* PlaceAttributeCell.xib */,
 				56B67D6B1EE6FE380086681B /* PlaceDetailTableViewDataSource.swift */,
+				56DFEF551EE8869100F3082C /* PlaceDetailViewController.xib */,
 				56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */,
 				56B67D6D1EE6FE380086681B /* PlaceNameHeader.swift */,
 				56B67D6E1EE6FE380086681B /* PlaceNameHeader.xib */,
@@ -203,11 +210,13 @@
 		5F5A537A1ADE67D500F81DF0 /* SmashTag */ = {
 			isa = PBXGroup;
 			children = (
+				56DFEF571EE8885200F3082C /* PlacePickerDemoAssets.xcassets */,
 				563BE5031EE7048F00309758 /* Support */,
 				566586EE1EE5FBBC008926CC /* Base.lproj */,
 				56B5B6091EE5DE2F0091CEAC /* shared */,
 				56FC77C71EE5DD2D007E2230 /* Constants.swift */,
 				56FC77C51EE5DD27007E2230 /* AppDelegate.swift */,
+				563BE5141EE7573C00309758 /* LogInViewController.swift */,
 				56FC77C31EE5DD22007E2230 /* FCViewController.swift */,
 				56B67D5F1EE6FE380086681B /* ViewControllers */,
 				5F5A537B1ADE67D500F81DF0 /* Supporting Files */,
@@ -313,7 +322,9 @@
 				5653AEB81EE5DD980086EE16 /* GoogleService-Info.plist in Resources */,
 				56B5B60F1EE5DE2F0091CEAC /* LaunchScreen.xib in Resources */,
 				5653AEBA1EE5DDA80086EE16 /* Info.plist in Resources */,
+				56DFEF581EE8885200F3082C /* PlacePickerDemoAssets.xcassets in Resources */,
 				56B5B6111EE5DE2F0091CEAC /* RobotoMono-Regular.ttf in Resources */,
+				56DFEF561EE8869100F3082C /* PlaceDetailViewController.xib in Resources */,
 				56B67D761EE6FE380086681B /* PlaceAttributeCell.xib in Resources */,
 				56B67D741EE6FE380086681B /* PickAPlaceViewController.xib in Resources */,
 			);
@@ -382,6 +393,7 @@
 				56B67D751EE6FE380086681B /* PlaceAttributeCell.swift in Sources */,
 				56FC77C81EE5DD2D007E2230 /* Constants.swift in Sources */,
 				56B67D721EE6FE380086681B /* SplitPaneViewController.swift in Sources */,
+				563BE5151EE7573C00309758 /* LogInViewController.swift in Sources */,
 				56B67D731EE6FE380086681B /* PickAPlaceViewController.swift in Sources */,
 				563BE50E1EE7048F00309758 /* SDKDemoAPIKey.swift in Sources */,
 				563BE50B1EE7048F00309758 /* CGRect+Extensions.swift in Sources */,
