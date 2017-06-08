@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uMT-A3-F60">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ovp-Ls-PrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
         <!--LogInViewController-->
         <scene sceneID="moX-1M-48c">
             <objects>
-                <viewController title="FCViewController" id="uMT-A3-F60" userLabel="LogInViewController" customClass="LogInViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LogInViewController" id="uMT-A3-F60" userLabel="LogInViewController" customClass="LogInViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yPS-DS-Klf"/>
                         <viewControllerLayoutGuide type="bottom" id="X8X-0F-Bdi"/>
@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRr-Ou-qfp" userLabel="Header">
-                                <rect key="frame" x="-4" y="20" width="383" height="40"/>
+                                <rect key="frame" x="-4" y="64" width="383" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-8t-BBQ">
                                         <rect key="frame" x="302" y="10" width="73" height="30"/>
@@ -67,7 +67,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you are currently drinking at : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfC-Zc-TC5">
-                                <rect key="frame" x="66" y="257" width="242" height="20.5"/>
+                                <rect key="frame" x="66" y="301" width="242" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d3-SD-M6T" userLabel="Locate Button">
-                                <rect key="frame" x="147" y="113" width="80" height="80"/>
+                                <rect key="frame" x="147" y="157" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="I5h-sj-RSx"/>
                                 </constraints>
@@ -89,7 +89,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3h-K2-OQs">
-                                <rect key="frame" x="133" y="318" width="109" height="30"/>
+                                <rect key="frame" x="133" y="362" width="109" height="30"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.52941176469999995" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="109" id="AYK-u1-U9w"/>
@@ -98,12 +98,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playGameButton:" destination="uMT-A3-F60" eventType="touchUpInside" id="AAa-A5-0hp"/>
-                                    <action selector="showLoginView:" destination="uMT-A3-F60" eventType="touchUpInside" id="9hO-bB-1q5"/>
+                                    <action selector="playGameAction:" destination="uMT-A3-F60" eventType="touchUpInside" id="hyp-Il-FRG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-zf-ltO">
-                                <rect key="frame" x="133" y="318" width="109" height="30"/>
+                                <rect key="frame" x="133" y="362" width="109" height="30"/>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.52941176470588236" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="109" id="TZj-Et-7hA"/>
@@ -116,7 +115,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxm-PG-E2S" userLabel="Game Location Label">
-                                <rect key="frame" x="187.5" y="277" width="0.0" height="26"/>
+                                <rect key="frame" x="187.5" y="321" width="0.0" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="t4Q-tL-V8q"/>
                                 </constraints>
@@ -149,6 +148,7 @@
                             <outletCollection property="gestureRecognizers" destination="yKK-fC-WS7" appends="YES" id="dhk-Y2-sKt"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="0sD-tH-Rv3"/>
                     <connections>
                         <outlet property="dismissImageRecognizer" destination="uGd-VQ-oms" id="lPc-Jm-MBq"/>
                         <outlet property="dismissKeyboardRecognizer" destination="yKK-fC-WS7" id="eHi-HY-cPL"/>
@@ -171,12 +171,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="653.60000000000002" y="52.623688155922046"/>
+            <point key="canvasLocation" x="1592.8" y="52.623688155922046"/>
         </scene>
-        <!--FCViewController-->
+        <!--GameViewController-->
         <scene sceneID="gcV-m8-fuD">
             <objects>
-                <viewController title="FCViewController" id="Rgx-4I-ee7" customClass="GameViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rgx-4I-ee7" userLabel="GameViewController" customClass="GameViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="10j-iQ-dvZ"/>
                         <viewControllerLayoutGuide type="bottom" id="o8k-Xy-5eA"/>
@@ -285,14 +285,10 @@
                                     <action selector="didTapAddPhoto:" destination="Rgx-4I-ee7" eventType="touchUpInside" id="Ixk-TT-O7H"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGU-7E-TCk">
-                                <rect key="frame" x="-4" y="20" width="383" height="647"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B5w-by-Agx">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="647"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHJ-53-mAB">
+                                <rect key="frame" x="12" y="68" width="351" height="531"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -300,7 +296,6 @@
                             <constraint firstItem="XaI-eG-E28" firstAttribute="leading" secondItem="SYt-bp-0uQ" secondAttribute="trailing" constant="8" symbolic="YES" id="1VB-a5-c9M"/>
                             <constraint firstItem="o8k-Xy-5eA" firstAttribute="top" secondItem="XaI-eG-E28" secondAttribute="bottom" constant="16" id="32W-af-vdh"/>
                             <constraint firstItem="XaI-eG-E28" firstAttribute="trailing" secondItem="Pfb-lQ-dvt" secondAttribute="trailing" id="47R-5s-KSg"/>
-                            <constraint firstItem="o8k-Xy-5eA" firstAttribute="top" secondItem="RGU-7E-TCk" secondAttribute="bottom" id="Da9-2Z-cSm"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="top" secondItem="XaI-eG-E28" secondAttribute="top" id="KWg-fn-ShP"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="top" secondItem="Pfb-lQ-dvt" secondAttribute="bottom" constant="8" symbolic="YES" id="MKI-vk-7GG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pfb-lQ-dvt" secondAttribute="trailing" constant="-4" id="MkJ-mm-cPI"/>
@@ -308,13 +303,10 @@
                             <constraint firstItem="ZA5-YF-0wc" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-20" id="R4Z-lb-TDj"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="leading" secondItem="Lgd-Ga-seq" secondAttribute="trailing" constant="8" symbolic="YES" id="UyU-5u-jQb"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="centerY" secondItem="Lgd-Ga-seq" secondAttribute="centerY" id="a0Z-IR-TxD"/>
-                            <constraint firstItem="RGU-7E-TCk" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-20" id="ccN-uf-3ea"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RGU-7E-TCk" secondAttribute="trailing" constant="-20" id="h3g-pB-hXn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZA5-YF-0wc" secondAttribute="trailing" constant="-20" id="ihW-qP-ywQ"/>
                             <constraint firstItem="Pfb-lQ-dvt" firstAttribute="top" secondItem="ZA5-YF-0wc" secondAttribute="bottom" constant="8" id="myg-lf-lfQ"/>
                             <constraint firstItem="Pfb-lQ-dvt" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-4" id="n0V-vV-PCC"/>
                             <constraint firstItem="Lgd-Ga-seq" firstAttribute="leading" secondItem="Pfb-lQ-dvt" secondAttribute="leading" id="qXe-6Z-Rs8"/>
-                            <constraint firstItem="RGU-7E-TCk" firstAttribute="top" secondItem="10j-iQ-dvZ" secondAttribute="bottom" id="vTZ-zI-Bfg"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DJR-PI-uy4" appends="YES" id="TWK-B9-pBj"/>
@@ -322,7 +314,6 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="backgroundBlur" destination="RGU-7E-TCk" id="pDv-8l-fIq"/>
                         <outlet property="dismissImageRecognizer" destination="uGd-VQ-oms" id="mUk-4c-Wxd"/>
                         <outlet property="dismissKeyboardRecognizer" destination="yKK-fC-WS7" id="HzZ-lX-kg0"/>
                         <outlet property="imageMessage" destination="Lgd-Ga-seq" id="vCc-YK-p4O"/>
@@ -344,7 +335,25 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1417" y="11"/>
+            <point key="canvasLocation" x="2356" y="10.344827586206897"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cai-3B-7BO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovp-Ls-PrT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k1A-3c-F3o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uMT-A3-F60" kind="relationship" relationship="rootViewController" id="GcP-pt-5cF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Fk-JV-e8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653.60000000000002" y="52.623688155922046"/>
         </scene>
     </scenes>
     <resources>
