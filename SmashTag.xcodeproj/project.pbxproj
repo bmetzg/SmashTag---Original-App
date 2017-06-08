@@ -37,7 +37,7 @@
 		56DFEF561EE8869100F3082C /* PlaceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DFEF551EE8869100F3082C /* PlaceDetailViewController.xib */; };
 		56DFEF581EE8885200F3082C /* PlacePickerDemoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DFEF571EE8885200F3082C /* PlacePickerDemoAssets.xcassets */; };
 		56FC3CB41EE701E2006338FA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */; };
-		56FC77C41EE5DD22007E2230 /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C31EE5DD22007E2230 /* FCViewController.swift */; };
+		56FC77C41EE5DD22007E2230 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C31EE5DD22007E2230 /* GameViewController.swift */; };
 		56FC77C61EE5DD27007E2230 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C51EE5DD27007E2230 /* AppDelegate.swift */; };
 		56FC77C81EE5DD2D007E2230 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C71EE5DD2D007E2230 /* Constants.swift */; };
 		F86BDC9118C4A7D4C4714DD3 /* Pods_SmashTag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5166E7E3D915F0477FCBEF /* Pods_SmashTag.framework */; };
@@ -52,7 +52,7 @@
 		563BE5081EE7048F00309758 /* ShadowLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLineView.swift; sourceTree = "<group>"; };
 		563BE5091EE7048F00309758 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		563BE50A1EE7048F00309758 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		563BE5141EE7573C00309758 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = SOURCE_ROOT; };
+		563BE5141EE7573C00309758 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = SmashTag/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
 		5653AEB71EE5DD980086EE16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SmashTag/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5653AEB91EE5DDA80086EE16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmashTag/Info.plist; sourceTree = SOURCE_ROOT; };
 		5653AEBB1EE5DDB90086EE16 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		56DFEF551EE8869100F3082C /* PlaceDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceDetailViewController.xib; sourceTree = "<group>"; };
 		56DFEF571EE8885200F3082C /* PlacePickerDemoAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = PlacePickerDemoAssets.xcassets; path = ../../../../../var/folders/c1/btx3zr5n10l0xc5jk982xlwc0000gq/T/CocoaPods/Try/GooglePlacePicker/Example/GooglePlacePickerDemos/Resources/PlacePickerDemoAssets.xcassets; sourceTree = "<group>"; };
 		56FC3CB31EE701E2006338FA /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
-		56FC77C31EE5DD22007E2230 /* FCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCViewController.swift; path = SmashTag/FCViewController.swift; sourceTree = SOURCE_ROOT; };
+		56FC77C31EE5DD22007E2230 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = SmashTag/GameViewController.swift; sourceTree = SOURCE_ROOT; };
 		56FC77C51EE5DD27007E2230 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmashTag/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56FC77C71EE5DD2D007E2230 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = SmashTag/Constants.swift; sourceTree = SOURCE_ROOT; };
 		5A5166E7E3D915F0477FCBEF /* Pods_SmashTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmashTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,7 +217,7 @@
 				56FC77C71EE5DD2D007E2230 /* Constants.swift */,
 				56FC77C51EE5DD27007E2230 /* AppDelegate.swift */,
 				563BE5141EE7573C00309758 /* LogInViewController.swift */,
-				56FC77C31EE5DD22007E2230 /* FCViewController.swift */,
+				56FC77C31EE5DD22007E2230 /* GameViewController.swift */,
 				56B67D5F1EE6FE380086681B /* ViewControllers */,
 				5F5A537B1ADE67D500F81DF0 /* Supporting Files */,
 			);
@@ -388,7 +388,7 @@
 				563BE5101EE7048F00309758 /* ShadowView.swift in Sources */,
 				56FC77C61EE5DD27007E2230 /* AppDelegate.swift in Sources */,
 				563BE50D1EE7048F00309758 /* RoundedButton.swift in Sources */,
-				56FC77C41EE5DD22007E2230 /* FCViewController.swift in Sources */,
+				56FC77C41EE5DD22007E2230 /* GameViewController.swift in Sources */,
 				56B67D701EE6FE380086681B /* BaseContainerViewController.swift in Sources */,
 				56B67D751EE6FE380086681B /* PlaceAttributeCell.swift in Sources */,
 				56FC77C81EE5DD2D007E2230 /* Constants.swift in Sources */,

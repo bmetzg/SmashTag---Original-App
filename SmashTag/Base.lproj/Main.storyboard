@@ -176,7 +176,7 @@
         <!--FCViewController-->
         <scene sceneID="gcV-m8-fuD">
             <objects>
-                <viewController title="FCViewController" id="Rgx-4I-ee7" customClass="FCViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FCViewController" id="Rgx-4I-ee7" customClass="GameViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="10j-iQ-dvZ"/>
                         <viewControllerLayoutGuide type="bottom" id="o8k-Xy-5eA"/>
@@ -293,48 +293,26 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Grb-47-jyW">
-                                <rect key="frame" x="12" y="68" width="351" height="531"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-l2-CVu">
-                                <rect key="frame" x="133" y="429" width="109" height="30"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.52941176469999995" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="c9q-0H-VCr"/>
-                                </constraints>
-                                <state key="normal" title="SIGN IN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showLoginView:" destination="Rgx-4I-ee7" eventType="touchUpInside" id="iup-za-FC0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Grb-47-jyW" firstAttribute="top" secondItem="ZA5-YF-0wc" secondAttribute="bottom" constant="8" id="1Ie-6g-qB3"/>
                             <constraint firstItem="XaI-eG-E28" firstAttribute="leading" secondItem="SYt-bp-0uQ" secondAttribute="trailing" constant="8" symbolic="YES" id="1VB-a5-c9M"/>
                             <constraint firstItem="o8k-Xy-5eA" firstAttribute="top" secondItem="XaI-eG-E28" secondAttribute="bottom" constant="16" id="32W-af-vdh"/>
                             <constraint firstItem="XaI-eG-E28" firstAttribute="trailing" secondItem="Pfb-lQ-dvt" secondAttribute="trailing" id="47R-5s-KSg"/>
-                            <constraint firstItem="Grb-47-jyW" firstAttribute="centerY" secondItem="Dxl-fp-CiM" secondAttribute="centerY" id="4Vm-TC-Hs2"/>
                             <constraint firstItem="o8k-Xy-5eA" firstAttribute="top" secondItem="RGU-7E-TCk" secondAttribute="bottom" id="Da9-2Z-cSm"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="top" secondItem="XaI-eG-E28" secondAttribute="top" id="KWg-fn-ShP"/>
-                            <constraint firstItem="Grb-47-jyW" firstAttribute="centerX" secondItem="Dxl-fp-CiM" secondAttribute="centerX" id="MAb-z5-Klc"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="top" secondItem="Pfb-lQ-dvt" secondAttribute="bottom" constant="8" symbolic="YES" id="MKI-vk-7GG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pfb-lQ-dvt" secondAttribute="trailing" constant="-4" id="MkJ-mm-cPI"/>
                             <constraint firstItem="ZA5-YF-0wc" firstAttribute="top" secondItem="10j-iQ-dvZ" secondAttribute="bottom" id="N4f-al-0Cv"/>
                             <constraint firstItem="ZA5-YF-0wc" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-20" id="R4Z-lb-TDj"/>
-                            <constraint firstItem="1Kz-l2-CVu" firstAttribute="centerX" secondItem="Dxl-fp-CiM" secondAttribute="centerX" id="Teh-Q4-OY2"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="leading" secondItem="Lgd-Ga-seq" secondAttribute="trailing" constant="8" symbolic="YES" id="UyU-5u-jQb"/>
                             <constraint firstItem="SYt-bp-0uQ" firstAttribute="centerY" secondItem="Lgd-Ga-seq" secondAttribute="centerY" id="a0Z-IR-TxD"/>
                             <constraint firstItem="RGU-7E-TCk" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-20" id="ccN-uf-3ea"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RGU-7E-TCk" secondAttribute="trailing" constant="-20" id="h3g-pB-hXn"/>
-                            <constraint firstItem="SYt-bp-0uQ" firstAttribute="top" secondItem="1Kz-l2-CVu" secondAttribute="bottom" constant="162" id="heI-AH-8T4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZA5-YF-0wc" secondAttribute="trailing" constant="-20" id="ihW-qP-ywQ"/>
                             <constraint firstItem="Pfb-lQ-dvt" firstAttribute="top" secondItem="ZA5-YF-0wc" secondAttribute="bottom" constant="8" id="myg-lf-lfQ"/>
                             <constraint firstItem="Pfb-lQ-dvt" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-4" id="n0V-vV-PCC"/>
-                            <constraint firstItem="Grb-47-jyW" firstAttribute="leading" secondItem="Pfb-lQ-dvt" secondAttribute="leading" id="ngY-if-4s3"/>
                             <constraint firstItem="Lgd-Ga-seq" firstAttribute="leading" secondItem="Pfb-lQ-dvt" secondAttribute="leading" id="qXe-6Z-Rs8"/>
                             <constraint firstItem="RGU-7E-TCk" firstAttribute="top" secondItem="10j-iQ-dvZ" secondAttribute="bottom" id="vTZ-zI-Bfg"/>
                         </constraints>
@@ -347,12 +325,10 @@
                         <outlet property="backgroundBlur" destination="RGU-7E-TCk" id="pDv-8l-fIq"/>
                         <outlet property="dismissImageRecognizer" destination="uGd-VQ-oms" id="mUk-4c-Wxd"/>
                         <outlet property="dismissKeyboardRecognizer" destination="yKK-fC-WS7" id="HzZ-lX-kg0"/>
-                        <outlet property="imageDisplay" destination="Grb-47-jyW" id="Lnf-Gq-cff"/>
                         <outlet property="imageMessage" destination="Lgd-Ga-seq" id="vCc-YK-p4O"/>
                         <outlet property="messageTextField" destination="SYt-bp-0uQ" id="0UV-lD-N1G"/>
                         <outlet property="messagesTable" destination="Pfb-lQ-dvt" id="7US-fM-XeM"/>
                         <outlet property="sendButton" destination="XaI-eG-E28" id="7CM-WQ-Nm6"/>
-                        <outlet property="signInButton" destination="1Kz-l2-CVu" id="Ueu-04-jgX"/>
                         <outlet property="signOutButton" destination="yxR-Su-Ygn" id="KMu-vx-Gfu"/>
                     </connections>
                 </viewController>
@@ -368,7 +344,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="655" y="53"/>
+            <point key="canvasLocation" x="1417" y="11"/>
         </scene>
     </scenes>
     <resources>
