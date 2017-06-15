@@ -223,7 +223,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-lQ-dvt">
-                                <rect key="frame" x="12" y="68" width="351" height="545"/>
+                                <rect key="frame" x="12" y="68" width="351" height="549"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -255,20 +255,19 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYt-bp-0uQ" userLabel="TextField">
-                                <rect key="frame" x="44" y="621" width="265" height="30"/>
+                                <rect key="frame" x="44" y="625" width="265" height="30"/>
                                 <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Rgx-4I-ee7" id="Q7o-MT-ydi"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-eG-E28">
-                                <rect key="frame" x="317" y="621" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-eG-E28">
+                                <rect key="frame" x="317" y="625" width="46" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="DIB-dX-R5G"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <state key="normal" title="SEND">
+                                <state key="normal" image="drink">
                                     <color key="titleColor" red="1" green="0.54117647059999996" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -276,7 +275,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgd-Ga-seq" userLabel="Image Photo">
-                                <rect key="frame" x="12" y="624" width="24" height="24"/>
+                                <rect key="frame" x="12" y="628" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="SbK-hH-gPY"/>
                                 </constraints>
@@ -358,6 +357,7 @@
     </scenes>
     <resources>
         <image name="LocateMe" width="80" height="80"/>
+        <image name="drink" width="23" height="26"/>
         <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_add_a_photo" width="24" height="24"/>
     </resources>
