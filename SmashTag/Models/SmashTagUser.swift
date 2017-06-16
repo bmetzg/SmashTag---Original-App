@@ -15,28 +15,18 @@ struct SmashTagUser {
     
     let playerName : String
     let playerIdentifier : String?
+    let imageURL : String? = nil
     
     // MARK: Initializers
     
-    init(dictionary: [String:AnyObject]) {
+    init(dictionary: [String:String]) {
         
         playerName = dictionary["name"] != nil ? dictionary["name"] as! String! + " " : ""
+        
         playerIdentifier = dictionary["playerIdentifier"] != nil ? dictionary["playerIdentifier"] as! String! + " " : ""
         
     }
     
-    static func studentsFromResults(_ results: [[String:AnyObject]]) -> [SmashTagUser] {
-        
-        var players = [SmashTagUser]()
-        
-        // iterate through array of dictionaries, each Movie is a dictionary
-        for result in results {
-            players.append(SmashTagUser(dictionary: result))
-            //print ("lastName \(String(describing: students[students.count-1].lastName))  \(students.count)" )
-            
-        }
-        return players
-    }
 }
 
 

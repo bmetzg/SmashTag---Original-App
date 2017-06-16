@@ -117,8 +117,8 @@
 		56176D321EF1E8C800DC43A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				56176D331EF1E95600DC43A1 /* SmashTagPlayers.swift */,
 				566312391EF1E83200752BE1 /* SmashTagUser.swift */,
+				56176D331EF1E95600DC43A1 /* SmashTagPlayers.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
