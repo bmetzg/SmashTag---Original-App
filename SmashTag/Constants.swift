@@ -26,9 +26,14 @@ struct Constants {
     
     // MARK: MessageFields
 
-    struct MessageFields {
+    struct PlayerFields {
         static let name = "name"
-        static let text = "text"
-        static let imageUrl = "photoUrl"
+        static let playerIdentifier = "playeridentifier"
+        static let playerState = "state"
+        static let playerGameState = "gamestate"
+        static let gamePlayerIdentifier = "gameplayeridentifier"
+        static let gamePlayerName = "gameplayername"
+        
+        static let pictURL = "photoUrl"
     }
 }
