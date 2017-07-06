@@ -25,6 +25,7 @@ extension UIApplication {
         return controller
     }
 }
+
 class SmashTagDataSource {
     
     static let sharedInstance = SmashTagDataSource()
@@ -34,14 +35,15 @@ class SmashTagDataSource {
     
     var playerName = "Anonymous"
     var playerScore = 0
-    var playerGameState = String()
+    var playerGameState = "none"
     var playerState = "active"
-    var gamePlayStateChange = false
+    var gamePlayStateChange = false  // removE
 
     var randomPlayerName = "Anonymous"
     var randomPlayerUniqueKey = String()
     
     var playersData = [SmashTagUser]()
+    var playersAdded = [ String ]()
     
     var msglength: NSNumber = 255
 
@@ -78,7 +80,6 @@ class SmashTagDataSource {
     {
         
         let ref = FIRDatabase.database().reference().child("playerlocations")
-        print ( "add observer \(self.gamePlayerLocation)")
         
         _refHandle = ref.child(self.gamePlayerLocation).observe(.value ) { (snapChat : FIRDataSnapshot) in
             
@@ -86,7 +87,7 @@ class SmashTagDataSource {
             var newPlayers: [SmashTagUser] = []
             
             for player in snapChat.children {
-                print (player)
+                print ("in observer a \(player)")
                 
                 let snap = player as! FIRDataSnapshot //each child is a snapshot
                 
@@ -95,31 +96,24 @@ class SmashTagDataSource {
                 if snap.value != nil {
                     print("key ... \(snap.key)")
                     var dict = snap.value as! [String: String] // the value is a dictionary - could be String : Any
-                    
+                    /*
                     let name = dict[Constants.PlayerFields.name]
-                    
-                    print("name .... \(name)")
-                    
-                    //let playerState = dict[Constants.PlayerFields.playerState] as! String
                     let playerState = dict[Constants.PlayerFields.playerState]
-
                     let playerGameState = dict[Constants.PlayerFields.playerGameState]
-                    
+                    */
                     var smashUser = SmashTagUser( dictionary : dict )
                     smashUser.playerIdentifier = snap.key
                     
-                    print ( "smashUser.playerIdentifier \(smashUser.playerIdentifier)")
                     newPlayers.append(smashUser)
                     
                 } else {
                     print("bad snap")
                 }
-            //    }
+            //}
             }
             
             self.playersData = newPlayers
             playersTable.reloadData()
-            print ("in observer b \(self.playersData.count)")
             
             /*   This is causing it to crash
             if self.playersData.count == 0 { return }
@@ -142,133 +136,177 @@ class SmashTagDataSource {
                 }
             }
         }
+        
+        let refChild = FIRDatabase.database().reference().child("playerlocations")
+        _refchildChangedHandle = refChild.child(self.gamePlayerLocation).child(self.playerUniqueKey).observe(.childChanged ) { (snapChat : FIRDataSnapshot) in
+            print ( "in observer d \(snapChat.value) \(snapChat.key)")
+            
+            // active notActive
+            /*
+            if snapChat.key == Constants.PlayerFields.playerState {
+                if snapChat.value as! String == "active" {
+                    DispatchQueue.main.async {
+                        playButton.isEnabled = true
+                        activeGameButton.isEnabled = true
+                        if let image = UIImage(named: "drinkactive") {
+                            activeGameButton.setImage(image, for: .normal) //.highlighted  .selected
+                        }
+                        
+                    }
+                    self.playerGameState = "none"
+                    self.playerState = "active"
 
-        ///   need to add
-        /*
-        usersRef.observe(.childRemoved, with: { snap in
-            guard let emailToFind = snap.value as? String else { return }
-            for (index, email) in self.currentUsers.enumerated() {
-                if email == emailToFind {
-                    let indexPath = IndexPath(row: index, section: 0)
-                    self.currentUsers.remove(at: index)
-                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        playButton.isEnabled = false
+                        activeGameButton.isEnabled = true
+                        if let image = UIImage(named: "drinkinactive") {
+                            activeGameButton.setImage(image, for: .normal) //.highlighted  .selected
+                        }
+                        
+                    }
+                    self.playerGameState = "none"
+                    self.playerState = "notActive"
                 }
             }
-        })
-        */
-        
-        _refchildChangedHandle = ref.child(self.gamePlayerLocation).observe(.childChanged ) { (snapChat : FIRDataSnapshot) in
-            print ( "in childchanged observer")
+            */
             
-            var player = snapChat.value as! [String:String]
+            // randomPlayerUniqueKey
+            if snapChat.key == Constants.PlayerFields.gamePlayerIdentifier {
+                self.randomPlayerUniqueKey = snapChat.value as! String
+                print ("setting random key")
+            }
             
-            if self.playerUniqueKey == snapChat.key {
+            if snapChat.key == Constants.PlayerFields.gamePlayerName {
+                self.randomPlayerName = snapChat.value as! String
+                print ("setting random name")
+            }
+            
+            // game state won lost none
+            if snapChat.key == Constants.PlayerFields.playerGameState {
                 
                 print ("in observer d won lost \(self.playersData.count)")
                 
-                if player[ Constants.PlayerFields.gamePlayerIdentifier]! != "" {
-
                 //   can't show alert in the main loop????
-                switch player [Constants.PlayerFields.playerGameState]! {
+                switch snapChat.value as! String {
                 case "won" :    print ("you won! xxx will be buying you a drink")
-                                if !self.gamePlayStateChange { return }
-                                self.playerGameState = "won"
-                                self.gamePlayStateChange = false
+                
+                //if !self.gamePlayStateChange { return }
+                self.playerGameState = "won"
+                self.gamePlayStateChange = false
+                
+                //self.randomPlayerUniqueKey = snapChat.value as! String
+                
+                DispatchQueue.main.async {
+                    
+                    playButton.isEnabled = true
+                    
+                    if let image = UIImage(named: "playwin") {
+                        playButton.setImage(image, for: .normal) //.highlighted  .selected
+                    }
+                    activeGameButton.isEnabled = false
 
-                                DispatchQueue.main.async {
-
-                                playButton.isEnabled = true
-                                    
-                                if let image = UIImage(named: "playwin") {
-                                    playButton.setImage(image, for: .normal) //.highlighted  .selected
-                                }    
-                                activeGameButton.isEnabled = false
-                                    
-                                self.showAlert (title: "SmashTag! Winner!", message: "\(player[ Constants.PlayerFields.gamePlayerName]!) will buy you a drink!  Once you receive your drink, click Drink Received! to release \(player[ Constants.PlayerFields.gamePlayerName]!) and continue playing.")
-
-                                }
+                    var name = self.randomPlayerName.components(separatedBy: " ")[0]
+                    if name == "" {name = self.randomPlayerName }
+                    
+                    self.showAlert (title: "SmashTag! Winner!", message: "\(name) will buy you a drink!  Once you receive your drink, click Drink Received! to release \(name) and continue playing.")
+                    
+                    }
                     
                 case "lost":    print ("you lost - you need to by xxxx a drink!")
 
-                                if !self.gamePlayStateChange { return }
-                                self.playerGameState = "lost"
-                                self.gamePlayStateChange = false
+                //if !self.gamePlayStateChange { return }
+                self.playerGameState = "lost"
+                self.gamePlayStateChange = false
                 
-                                DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    
+                    if let image = UIImage(named: "playlost") {
+                        playButton.setImage(image, for: .normal) //.highlighted  .selected
+                    }
+                    
+                    playButton.isEnabled = false
+                    activeGameButton.isEnabled = false
+                    
+                    var name = self.randomPlayerName.components(separatedBy: " ")[0]
+                    if name == "" {name = self.randomPlayerName }
 
-                                if let image = UIImage(named: "playlost") {
-                                        playButton.setImage(image, for: .normal) //.highlighted  .selected
-                                }
-                                    
-                                playButton.isEnabled = false
-                                activeGameButton.isEnabled = false
-                                    
-                                self.showAlert (title: "SmashTag! Loser!", message: "You will need to buy \(player[ Constants.PlayerFields.gamePlayerName]!) a drink before continuing SmashTag!  \(player[ Constants.PlayerFields.gamePlayerName]!) will release you once they have received their drink.")
+                    self.showAlert (title: "SmashTag! Loser!", message: "You will need to buy \(name) a drink before continuing SmashTag!  \(name) will release you once they have received their drink.")
+                    
+                    if  self.randomPlayerName.contains("smashtag!_player") { self.releaseGamePlayers() }
+                    
+                    }
+                    
+                case "none":    print ("none - reenable buttons")
 
-                                }
-                case "none":    print ("change to none - reenable buttons")
-                                self.playerGameState = "none"
-                                self.randomPlayerUniqueKey = ""
-                                self.randomPlayerName = ""
+                print ("none - reenable buttons 2")
 
-                                DispatchQueue.main.async {
-                                playButton.isEnabled = true
-                                activeGameButton.isEnabled = true
-                                if let image = UIImage(named: "play") {
-                                        playButton.setImage(image, for: .normal) //.highlighted  .selected
-                                    }
-                                playButton.titleLabel?.text = " Drink! "
-
-                                if let image = UIImage(named: "drinkactive") {
-                                        activeGameButton.setImage(image, for: .normal) //.highlighted  .selected
-                                    }
-
-                                }
-                default : break
-                }
+                DispatchQueue.main.async {
+                    playButton.isEnabled = true
+                    activeGameButton.isEnabled = true
+                    if let image = UIImage(named: "play") {
+                        playButton.setImage(image, for: .normal) //.highlighted  .selected
+                    }
+                    if let image = UIImage(named: "drinkactive") {
+                        activeGameButton.setImage(image, for: .normal) //.highlighted  .selected
+                    }
                     
                 }
+                self.playerGameState = "none"
+                self.playerState = "active"
+                    
+                    
+                default : break
+                }
             }
-        }
-        
-        return
-        
-        //  This was crashing on return to TableView and susequent add  .looping through each child one by one
-        // insertRows was causing the crash?
-        let ref1 = FIRDatabase.database().reference().child("playerlocations")
-        
-        print ( "add child changed observer \(self.gamePlayerLocation)")
-        
-        _refHandle = ref1.child(self.gamePlayerLocation).observe(.childChanged ) { (snapChat : FIRDataSnapshot) in
-            
-            print ("player found at location \(self.gamePlayerLocation)")
-            var player = snapChat.value as! [String:String]
-            player ["playerIdentifier"] =  snapChat.key
-            print (snapChat.key)
-            let name = player [Constants.PlayerFields.name] ?? "[username]"
-            let place_id = player [Constants.PlayerFields.name] ?? "[place_id]"
-            print ("1")
-            let smashUser = SmashTagUser( dictionary: player )
-            print("2")
-            
-            self.playersData.append(smashUser)
-            
-            print("3 \(self.playersData.count)")
-            
-            playersTable.insertRows(at: [IndexPath(row: self.playersData.count-1, section : 0)], with: .automatic )
-            
-            print("4")
-            //self.scrollToBottomMessage()
-        }
+
+            }
+    
     }
     
-    func removePlayerLocation ( )
-    {
+    func releaseGamePlayers() {
         
-        //  removes the last currently added by this player - assuming player will only add one?
-        print ( "removePlayerLocation \(playerUniqueKey)")
         let ref = FIRDatabase.database().reference()
-        ref.child("playerlocations").child(gamePlayerLocation).child(playerUniqueKey).removeValue { error in
+        
+        //RANDOM GAME PLAYER
+        if self.randomPlayerUniqueKey != "" {
+            print ("setting game stat to none \(self.randomPlayerUniqueKey)")
+            let playerref2 = ref.child("playerlocations").child(self.gamePlayerLocation).child(self.randomPlayerUniqueKey)
+        
+            playerref2.updateChildValues([Constants.PlayerFields.playerGameState:"none",
+                                        Constants.PlayerFields.gamePlayerIdentifier:"",
+                                        Constants.PlayerFields.gamePlayerName:"",
+                                        Constants.PlayerFields.playerState:"active"
+            ])
+        }
+        // GAME PLAYER
+        if self.playerUniqueKey != "" {
+           let playerref = ref.child("playerlocations").child(self.gamePlayerLocation).child(self.playerUniqueKey)
+        
+            playerref.updateChildValues([Constants.PlayerFields.playerGameState: "none",
+                                       Constants.PlayerFields.gamePlayerIdentifier:"",
+                                       Constants.PlayerFields.gamePlayerName:"",
+                                       Constants.PlayerFields.playerState:"active"
+            ])
+            //smashPlayersModel.gamePlayStateChange = true
+            self.playerGameState = "none"
+        }
+        
+        self.randomPlayerUniqueKey = ""
+        self.randomPlayerName = ""
+        
+    }
+
+    func removePlayer ( player : String )
+    {
+        if player == "" { return }
+            
+        //  removes the last currently added by this player - assuming player will only add one?
+        print ( "removePlayerLocation \(player)")
+        let ref = FIRDatabase.database().reference()
+        ref.child("playerlocations").child(gamePlayerLocation).child(player).removeValue { error in
             if error != nil {
                 print("error \(error)")
             }
@@ -303,9 +341,8 @@ class SmashTagDataSource {
         let newRef = ref.child("playerlocations").child(self.gamePlayerLocation).childByAutoId()
         newRef.setValue(data)
         
-        
-        //self.playerUniqueKey = newRef.key
-        
+        self.playersAdded.append ( newRef.key )
+
         if self.playerUniqueKey == nil { print ("Error generating player in location/bar database") }
 
     }
