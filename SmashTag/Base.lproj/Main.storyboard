@@ -129,10 +129,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="y86-gi-pXK">
+                                <rect key="frame" x="0.0" y="563" width="375" height="50"/>
+                                <color key="tintColor" red="0.94713371992111206" green="0.028035284951329231" blue="0.76391977071762085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XJQ-gi-rl7"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="X8X-0F-Bdi" firstAttribute="top" secondItem="y86-gi-pXK" secondAttribute="bottom" constant="54" id="26k-F2-lXI"/>
                             <constraint firstItem="yX3-Rd-lug" firstAttribute="top" secondItem="4d3-SD-M6T" secondAttribute="bottom" constant="8" id="3X8-Ub-HBM"/>
                             <constraint firstItem="Pqv-JI-zKn" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="21" id="4Jp-1g-a7p"/>
                             <constraint firstItem="G3h-K2-OQs" firstAttribute="centerX" secondItem="zfC-Zc-TC5" secondAttribute="centerX" id="6bh-7E-O0H"/>
@@ -140,6 +148,7 @@
                             <constraint firstItem="zfC-Zc-TC5" firstAttribute="top" secondItem="yX3-Rd-lug" secondAttribute="bottom" constant="35" id="801-mt-jZF"/>
                             <constraint firstItem="Pqv-JI-zKn" firstAttribute="top" secondItem="saZ-zf-ltO" secondAttribute="bottom" constant="26" id="8G1-pv-Dz2"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="cxm-PG-E2S" secondAttribute="centerX" id="DhW-Ze-EDe"/>
+                            <constraint firstItem="y86-gi-pXK" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-16" id="MNm-HG-YiF"/>
                             <constraint firstItem="yX3-Rd-lug" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="75" id="Mmg-xB-BMN"/>
                             <constraint firstItem="G3h-K2-OQs" firstAttribute="top" secondItem="zfC-Zc-TC5" secondAttribute="bottom" constant="40" id="SYp-ZY-Kpc"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="top" secondItem="zfC-Zc-TC5" secondAttribute="bottom" constant="40" id="SbT-Zn-Ilx"/>
@@ -152,6 +161,7 @@
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="zfC-Zc-TC5" secondAttribute="centerX" id="kpK-LK-Y5c"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="lXP-yU-4e8"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="yPS-DS-Klf" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y86-gi-pXK" secondAttribute="trailing" constant="-16" id="oBu-zo-Xx7"/>
                             <constraint firstItem="cxm-PG-E2S" firstAttribute="centerX" secondItem="zfC-Zc-TC5" secondAttribute="centerX" id="oEA-p7-NHL"/>
                             <constraint firstItem="zfC-Zc-TC5" firstAttribute="centerX" secondItem="4d3-SD-M6T" secondAttribute="centerX" id="pnL-s6-h5Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pqv-JI-zKn" secondAttribute="trailing" constant="22" id="vij-nl-gSU" userLabel="trailingMargin = Score Label.trailing + 26"/>
@@ -163,6 +173,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0sD-tH-Rv3"/>
                     <connections>
+                        <outlet property="activityMonitorOutlet" destination="y86-gi-pXK" id="8FB-73-H9t"/>
                         <outlet property="dismissImageRecognizer" destination="uGd-VQ-oms" id="lPc-Jm-MBq"/>
                         <outlet property="dismissKeyboardRecognizer" destination="yKK-fC-WS7" id="eHi-HY-cPL"/>
                         <outlet property="gameLocationLable" destination="cxm-PG-E2S" id="HGa-Ha-5cX"/>
@@ -237,7 +248,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-lQ-dvt">
-                                <rect key="frame" x="12" y="68" width="351" height="484.5"/>
+                                <rect key="frame" x="12" y="68" width="351" height="485"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -299,6 +310,12 @@
                                     <action selector="didTapAddPhoto:" destination="Rgx-4I-ee7" eventType="touchUpInside" id="Ixk-TT-O7H"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XVF-bx-N8o">
+                                <rect key="frame" x="16" y="539" width="359" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="glV-HA-JtF"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -306,10 +323,12 @@
                             <constraint firstItem="Oah-YW-gmL" firstAttribute="leading" secondItem="Lgd-Ga-seq" secondAttribute="trailing" constant="35" id="2X4-BF-cuQ"/>
                             <constraint firstItem="o8k-Xy-5eA" firstAttribute="top" secondItem="XaI-eG-E28" secondAttribute="bottom" constant="31" id="32W-af-vdh"/>
                             <constraint firstItem="XaI-eG-E28" firstAttribute="trailing" secondItem="Pfb-lQ-dvt" secondAttribute="trailing" constant="10" id="47R-5s-KSg"/>
+                            <constraint firstItem="XVF-bx-N8o" firstAttribute="centerY" secondItem="Dxl-fp-CiM" secondAttribute="centerY" constant="230.5" id="EoC-Bf-n1E"/>
                             <constraint firstItem="Oah-YW-gmL" firstAttribute="top" secondItem="Pfb-lQ-dvt" secondAttribute="bottom" constant="-0.5" id="LEu-Ck-Slc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pfb-lQ-dvt" secondAttribute="trailing" constant="-4" id="MkJ-mm-cPI"/>
                             <constraint firstItem="ZA5-YF-0wc" firstAttribute="top" secondItem="10j-iQ-dvZ" secondAttribute="bottom" id="N4f-al-0Cv"/>
                             <constraint firstItem="ZA5-YF-0wc" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-20" id="R4Z-lb-TDj"/>
+                            <constraint firstItem="XVF-bx-N8o" firstAttribute="trailing" secondItem="Dxl-fp-CiM" secondAttribute="trailingMargin" constant="16" id="Ru6-Iv-aDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XaI-eG-E28" secondAttribute="trailing" constant="-14" id="S2c-nT-2If"/>
                             <constraint firstItem="Oah-YW-gmL" firstAttribute="centerX" secondItem="Pfb-lQ-dvt" secondAttribute="centerX" constant="16" id="SlP-ja-HSJ"/>
                             <constraint firstItem="o8k-Xy-5eA" firstAttribute="top" secondItem="Lgd-Ga-seq" secondAttribute="bottom" constant="25" id="YyZ-VE-6aW"/>
@@ -320,10 +339,12 @@
                             <constraint firstItem="Pfb-lQ-dvt" firstAttribute="top" secondItem="ZA5-YF-0wc" secondAttribute="bottom" constant="8" id="myg-lf-lfQ"/>
                             <constraint firstItem="Pfb-lQ-dvt" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" constant="-4" id="n0V-vV-PCC"/>
                             <constraint firstItem="Lgd-Ga-seq" firstAttribute="leading" secondItem="Pfb-lQ-dvt" secondAttribute="leading" constant="17" id="qXe-6Z-Rs8"/>
+                            <constraint firstItem="XVF-bx-N8o" firstAttribute="leading" secondItem="Dxl-fp-CiM" secondAttribute="leadingMargin" id="qpD-kw-S2j"/>
                             <constraint firstItem="Lgd-Ga-seq" firstAttribute="top" secondItem="Pfb-lQ-dvt" secondAttribute="bottom" constant="18.5" id="wJq-jm-cz9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityOutlet" destination="XVF-bx-N8o" id="kq6-dk-080"/>
                         <outlet property="inTheGameOutlet" destination="Oah-YW-gmL" id="TU6-fq-j4E"/>
                         <outlet property="messagesTable" destination="Pfb-lQ-dvt" id="7US-fM-XeM"/>
                         <outlet property="playSmashTagOutlet" destination="XaI-eG-E28" id="MuM-Xw-iJA"/>

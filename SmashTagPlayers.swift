@@ -57,9 +57,10 @@ class SmashTagDataSource {
     var _refHandle: FIRDatabaseHandle!
     var _refchildChangedHandle: FIRDatabaseHandle!
     var _refRemoveHandle : FIRDatabaseHandle!
+    var _internetConnectionHandle : FIRDatabaseHandle!
     
     var _authHandle: FIRAuthStateDidChangeListenerHandle!
-    
+    var connectedToInternet : Bool = true
     var user : FIRUser?
 
     private init() {} //This prevents others from using the default '()' initializer for this class.
@@ -74,12 +75,12 @@ class SmashTagDataSource {
             UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
         //}
     }
-
     
     func addPlayerObserver( playersTable : UITableView, playButton : UIButton, activeGameButton : UIButton )
     {
-        
+                
         let ref = FIRDatabase.database().reference().child("playerlocations")
+
         
         _refHandle = ref.child(self.gamePlayerLocation).observe(.value ) { (snapChat : FIRDataSnapshot) in
             
@@ -408,30 +409,42 @@ class SmashTagDataSource {
         return 0
 
     }
-
-    func savePlayerPhoto (photoData: Data) {
-        
+    
+    func savePlayerPhoto (photoData: Data, activityIndicator : UIActivityIndicatorView ) -> Int {
+        var myerror : Int = 0
         let imagePath = "chat_photos/" + FIRAuth.auth()!.currentUser!.uid + "/\(Double(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
         let metadata = FIRStorageMetadata()
         metadata.contentType = "image/jpeg"
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
 
         self.storageRef!.child(imagePath).put(photoData, metadata : metadata ) { (metadata, error ) in
+            DispatchQueue.main.async {
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            }
             if let error = error {
                 print ( "error\(error)")
+                myerror = -1
+                activityIndicator.stopAnimating()
+                activityIndicator.isHidden = true
+
                 return
             }
             
-        let ref = FIRDatabase.database().reference().child("playerlocations")
-        let playerref = ref.child(self.gamePlayerLocation).child(self.playerUniqueKey)
-        let updatedPlayerData = self.playersData[self.returnCurrentPlayer()]
+            let ref = FIRDatabase.database().reference().child("playerlocations")
+            let playerref = ref.child(self.gamePlayerLocation).child(self.playerUniqueKey)
+            let updatedPlayerData = self.playersData[self.returnCurrentPlayer()]
             
-        playerref.setValue([Constants.PlayerFields.name: updatedPlayerData.playerName,
+            playerref.setValue([Constants.PlayerFields.name: updatedPlayerData.playerName,
                                 Constants.PlayerFields.playerState: updatedPlayerData.playerState,
                                 Constants.PlayerFields.playerGameState : updatedPlayerData.playerGameState,
                                 Constants.PlayerFields.gamePlayerIdentifier : updatedPlayerData.gamePlayerIdentifier,
                                 Constants.PlayerFields.gamePlayerName : updatedPlayerData.gamePlayerName,
                                 Constants.PlayerFields.pictURL : self.storageRef!.child((metadata?.path)!).description])
         }
+        return myerror
     }
+
 }
-    
+
