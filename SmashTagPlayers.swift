@@ -38,13 +38,13 @@ class SmashTagDataSource {
     var playerGameState = "none"
     var playerState = "active"
     var gamePlayStateChange = false  // removE
-
     var randomPlayerName = "Anonymous"
     var randomPlayerUniqueKey = String()
     
     var playersData = [SmashTagUser]()
     var playersAdded = [ String ]()
-    
+    var blockUsers = [String]()
+
     var msglength: NSNumber = 255
 
     var ref: FIRDatabaseReference!
@@ -58,6 +58,7 @@ class SmashTagDataSource {
     var _refchildChangedHandle: FIRDatabaseHandle!
     var _refRemoveHandle : FIRDatabaseHandle!
     var _internetConnectionHandle : FIRDatabaseHandle!
+    var _refOtherPlayerChanged : FIRDatabaseHandle!
     
     var _authHandle: FIRAuthStateDidChangeListenerHandle!
     var connectedToInternet : Bool = true
@@ -80,8 +81,7 @@ class SmashTagDataSource {
     {
                 
         let ref = FIRDatabase.database().reference().child("playerlocations")
-
-        
+        // player added to game
         _refHandle = ref.child(self.gamePlayerLocation).observe(.value ) { (snapChat : FIRDataSnapshot) in
             
             print ("in observer a \(self.playersData.count)")
@@ -103,10 +103,11 @@ class SmashTagDataSource {
                     let playerGameState = dict[Constants.PlayerFields.playerGameState]
                     */
                     var smashUser = SmashTagUser( dictionary : dict )
-                    smashUser.playerIdentifier = snap.key
                     
-                    newPlayers.append(smashUser)
-                    
+                    if !self.blockUsers.contains(smashUser.playerName) {
+                        smashUser.playerIdentifier = snap.key
+                        newPlayers.append(smashUser)
+                    }
                 } else {
                     print("bad snap")
                 }
@@ -125,7 +126,7 @@ class SmashTagDataSource {
         }
         
         let refRemove = FIRDatabase.database().reference().child("playerlocations")
-        
+        // player removed from game
         _refRemoveHandle = refRemove.child(self.gamePlayerLocation).observe(.childRemoved ) { (snap : FIRDataSnapshot) in
             guard let playerRemoveKey = snap.value as? String else { return }
             for (index, player) in self.playersData.enumerated() {
@@ -139,6 +140,7 @@ class SmashTagDataSource {
         }
         
         let refChild = FIRDatabase.database().reference().child("playerlocations")
+        // the players value changed - need to save
         _refchildChangedHandle = refChild.child(self.gamePlayerLocation).child(self.playerUniqueKey).observe(.childChanged ) { (snapChat : FIRDataSnapshot) in
             print ( "in observer d \(snapChat.value) \(snapChat.key)")
             
@@ -209,8 +211,9 @@ class SmashTagDataSource {
                     }
                     activeGameButton.isEnabled = false
 
-                    var name = self.randomPlayerName.components(separatedBy: " ")[0]
-                    if name == "" {name = self.randomPlayerName }
+                    //var name = self.randomPlayerName.components(separatedBy: " ")[0]
+                    let name = self.randomPlayerName
+                    //if name == "" {name = self.randomPlayerName }
                     
                     self.showAlert (title: "SmashTag! Winner!", message: "\(name) will buy you a drink!  Once you receive your drink, click Drink Received! to release \(name) and continue playing.")
                     
@@ -231,12 +234,13 @@ class SmashTagDataSource {
                     playButton.isEnabled = false
                     activeGameButton.isEnabled = false
                     
-                    var name = self.randomPlayerName.components(separatedBy: " ")[0]
-                    if name == "" {name = self.randomPlayerName }
+                    //var name = self.randomPlayerName.components(separatedBy: " ")[0]
+                    let name = self.randomPlayerName
+                    //if name == "" {name = self.randomPlayerName }
 
                     self.showAlert (title: "SmashTag! Loser!", message: "You will need to buy \(name) a drink before continuing SmashTag!  \(name) will release you once they have received their drink.")
                     
-                    if  self.randomPlayerName.contains("smashtag!_player") { self.releaseGamePlayers() }
+                    //if  self.randomPlayerName.contains("smashtag!_player") { self.releaseGamePlayers() }
                     
                     }
                     
@@ -263,14 +267,60 @@ class SmashTagDataSource {
                 }
             }
 
-            }
-    
+            }        
+
     }
     
-    func releaseGamePlayers() {
-        
+    func releaseGamePlayers( whichPlayertoRelease : String, remove : Bool ) {
+        print ( "hello whichPlayertoRelease \(whichPlayertoRelease)")
+
         let ref = FIRDatabase.database().reference()
+
+        if whichPlayertoRelease != "" {
+            print ( "hello")
+            let playerref = ref.child("playerlocations").child(self.gamePlayerLocation).child(whichPlayertoRelease)
+            playerref.child(Constants.PlayerFields.gamePlayerIdentifier).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if let gamePlayerIdentifier = snapshot.value as? String{
+                        print ( "hello gamePlayerIdentifier \(gamePlayerIdentifier)")
+                        if self.playerUniqueKey == gamePlayerIdentifier {
+                            self.playerGameState = "none"
+                            self.randomPlayerUniqueKey = ""
+                            self.randomPlayerName = ""
+                            self.playerState = "active"
+                        }
+                        if gamePlayerIdentifier != "" {
+                            let playerref2 = ref.child("playerlocations").child(self.gamePlayerLocation).child(gamePlayerIdentifier)
+                            playerref2.updateChildValues([Constants.PlayerFields.playerGameState: "none",
+                                                          Constants.PlayerFields.gamePlayerIdentifier:"",
+                                                          Constants.PlayerFields.gamePlayerName:"",
+                                                          Constants.PlayerFields.playerState:"active"
+                                ])
+
+                        }
+
+                        
+                   }
+                if remove { // do not need to do anything 
+                }
+                else {
+                    
+                    playerref.updateChildValues([Constants.PlayerFields.playerGameState: "none",
+                                             Constants.PlayerFields.gamePlayerIdentifier:"",
+                                             Constants.PlayerFields.gamePlayerName:"",
+                                             Constants.PlayerFields.playerState:"active"
+                    ])
+                }
+                })
+        }
         
+        if self.playerUniqueKey == whichPlayertoRelease {
+        self.playerGameState = "none"
+        self.randomPlayerUniqueKey = ""
+        self.randomPlayerName = ""
+        }
+        
+        return
         //RANDOM GAME PLAYER
         if self.randomPlayerUniqueKey != "" {
             print ("setting game stat to none \(self.randomPlayerUniqueKey)")
@@ -303,16 +353,27 @@ class SmashTagDataSource {
     func removePlayer ( player : String )
     {
         if player == "" { return }
+        let ref = FIRDatabase.database().reference()
+
+        let playerref = ref.child("playerlocations").child(self.gamePlayerLocation).child(player)
+        playerref.child(Constants.PlayerFields.pictURL).observeSingleEvent(of: .value, with: { (snapshot) in
             
+            if let photoToDeleteURL = snapshot.value as? String{
+                if photoToDeleteURL != "" {
+                    let postRef = FIRStorage.storage().reference(forURL: photoToDeleteURL)
+                    postRef.delete { (error) in
+                            print("error deleting photo \(String(describing: error))")
+                    }
+                }
+            }
+        })
+        
         //  removes the last currently added by this player - assuming player will only add one?
         print ( "removePlayerLocation \(player)")
-        let ref = FIRDatabase.database().reference()
-        ref.child("playerlocations").child(gamePlayerLocation).child(player).removeValue { error in
-            if error != nil {
+        ref.child("playerlocations").child(gamePlayerLocation).child(player).removeValue { ( error, ref ) in
                 print("error \(error)")
             }
-            
-        }
+        
     }
     
     func addPlayerLocation ( data: [String:String] ) {
@@ -411,24 +472,36 @@ class SmashTagDataSource {
     }
     
     func savePlayerPhoto (photoData: Data, activityIndicator : UIActivityIndicatorView ) -> Int {
+        
+        let ref = FIRDatabase.database().reference()
+        let playerref = ref.child("playerlocations").child(self.gamePlayerLocation).child(self.playerUniqueKey)
+        playerref.child(Constants.PlayerFields.pictURL).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let photoToDeleteURL = snapshot.value as? String{
+                if photoToDeleteURL != "" {
+                    let postRef = FIRStorage.storage().reference(forURL: photoToDeleteURL)
+                    postRef.delete { (error) in
+                        print("error deleting photo \(String(describing: error))")
+                    }
+                }
+            }
+        })
+
+        
         var myerror : Int = 0
-        let imagePath = "chat_photos/" + FIRAuth.auth()!.currentUser!.uid + "/\(Double(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
+        let imagePath = "smash_photos/" + self.gamePlayerLocation + "/" + self.playerUniqueKey + "\(Double(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
         let metadata = FIRStorageMetadata()
         metadata.contentType = "image/jpeg"
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
+        //activityIndicator.startAnimating() 
 
         self.storageRef!.child(imagePath).put(photoData, metadata : metadata ) { (metadata, error ) in
-            DispatchQueue.main.async {
-            activityIndicator.stopAnimating()
-            activityIndicator.isHidden = true
-            }
+            
+            //DispatchQueue.main.async {
+            //activityIndicator.stopAnimating()
+            //}
             if let error = error {
                 print ( "error\(error)")
                 myerror = -1
-                activityIndicator.stopAnimating()
-                activityIndicator.isHidden = true
-
                 return
             }
             
@@ -441,7 +514,9 @@ class SmashTagDataSource {
                                 Constants.PlayerFields.playerGameState : updatedPlayerData.playerGameState,
                                 Constants.PlayerFields.gamePlayerIdentifier : updatedPlayerData.gamePlayerIdentifier,
                                 Constants.PlayerFields.gamePlayerName : updatedPlayerData.gamePlayerName,
-                                Constants.PlayerFields.pictURL : self.storageRef!.child((metadata?.path)!).description])
+                                Constants.PlayerFields.pictURL : self.storageRef!.child((metadata?.path)!).description,
+                                Constants.PlayerFields.score : "\(updatedPlayerData.score)"]
+            )
         }
         return myerror
     }

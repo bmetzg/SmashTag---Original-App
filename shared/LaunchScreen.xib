@@ -14,7 +14,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.0078431372549019607" green="0.70196078431372544" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNH-b8-UpI">
+                    <rect key="frame" x="122" y="323" width="145" height="21"/>
+                    <attributedString key="attributedText">
+                        <fragment content="SmashTag! 1.0">
+                            <attributes>
+                                <font key="NSFont" size="24" name="MarkerFelt-Thin"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.97385698556900024" green="0.90837556123733521" blue="0.97419697046279907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vNH-b8-UpI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nLr-qV-WvY"/>
+                <constraint firstItem="vNH-b8-UpI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xre-3S-zeB"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
 </document>

@@ -33,6 +33,7 @@ struct Constants {
         static let playerGameState = "gamestate"
         static let gamePlayerIdentifier = "gameplayeridentifier"
         static let gamePlayerName = "gameplayername"
+        static let score = "score"
         
         static let pictURL = "photoUrl"
     }

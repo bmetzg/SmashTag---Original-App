@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ovp-Ls-PrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ovp-Ls-PrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="MarkerFeltThin.ttf">
+            <string>MarkerFelt-Thin</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -66,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="40" id="lcD-f1-KBk"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you are currently drinking at : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfC-Zc-TC5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you are currently drinking at : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfC-Zc-TC5">
                                 <rect key="frame" x="37" y="302" width="300" height="24"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -96,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-zf-ltO">
-                                <rect key="frame" x="132" y="366" width="109" height="30"/>
+                                <rect key="frame" x="133" y="366" width="109" height="30"/>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.52941176470588236" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="109" id="TZj-Et-7hA"/>
@@ -115,7 +118,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let SmashTag! Locate Me!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-Rd-lug">
-                                <rect key="frame" x="91" y="245" width="221" height="22"/>
+                                <rect key="frame" x="82" y="245" width="211" height="22"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,7 +132,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="y86-gi-pXK">
+                            <activityIndicatorView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="y86-gi-pXK">
                                 <rect key="frame" x="0.0" y="563" width="375" height="50"/>
                                 <color key="tintColor" red="0.94713371992111206" green="0.028035284951329231" blue="0.76391977071762085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -147,23 +150,21 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VRr-Ou-qfp" secondAttribute="trailing" constant="-20" id="7LE-0W-xWN"/>
                             <constraint firstItem="zfC-Zc-TC5" firstAttribute="top" secondItem="yX3-Rd-lug" secondAttribute="bottom" constant="35" id="801-mt-jZF"/>
                             <constraint firstItem="Pqv-JI-zKn" firstAttribute="top" secondItem="saZ-zf-ltO" secondAttribute="bottom" constant="26" id="8G1-pv-Dz2"/>
-                            <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="cxm-PG-E2S" secondAttribute="centerX" id="DhW-Ze-EDe"/>
                             <constraint firstItem="y86-gi-pXK" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-16" id="MNm-HG-YiF"/>
-                            <constraint firstItem="yX3-Rd-lug" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="75" id="Mmg-xB-BMN"/>
+                            <constraint firstItem="yX3-Rd-lug" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="O55-MB-gyQ"/>
                             <constraint firstItem="G3h-K2-OQs" firstAttribute="top" secondItem="zfC-Zc-TC5" secondAttribute="bottom" constant="40" id="SYp-ZY-Kpc"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="top" secondItem="zfC-Zc-TC5" secondAttribute="bottom" constant="40" id="SbT-Zn-Ilx"/>
                             <constraint firstItem="4d3-SD-M6T" firstAttribute="centerX" secondItem="VRr-Ou-qfp" secondAttribute="centerX" id="Tyt-ic-3Dg"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="top" secondItem="cxm-PG-E2S" secondAttribute="bottom" constant="15" id="XgY-37-Eds"/>
                             <constraint firstItem="4d3-SD-M6T" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="bottom" constant="53" id="aDS-hM-XJT"/>
                             <constraint firstItem="cxm-PG-E2S" firstAttribute="top" secondItem="zfC-Zc-TC5" secondAttribute="bottom" constant="-0.5" id="egk-y6-90L"/>
-                            <constraint firstItem="zfC-Zc-TC5" firstAttribute="centerX" secondItem="yX3-Rd-lug" secondAttribute="centerX" constant="-14.5" id="fpY-Cu-Pqk"/>
                             <constraint firstItem="saZ-zf-ltO" firstAttribute="top" secondItem="zfC-Zc-TC5" secondAttribute="bottom" constant="40" id="gTU-cq-nDF"/>
-                            <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="zfC-Zc-TC5" secondAttribute="centerX" id="kpK-LK-Y5c"/>
+                            <constraint firstItem="saZ-zf-ltO" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="hAL-LW-Rvz"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="lXP-yU-4e8"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="yPS-DS-Klf" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
+                            <constraint firstItem="zfC-Zc-TC5" firstAttribute="centerX" secondItem="4Dk-Kp-xdq" secondAttribute="centerX" id="nwG-jJ-RQt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y86-gi-pXK" secondAttribute="trailing" constant="-16" id="oBu-zo-Xx7"/>
                             <constraint firstItem="cxm-PG-E2S" firstAttribute="centerX" secondItem="zfC-Zc-TC5" secondAttribute="centerX" id="oEA-p7-NHL"/>
-                            <constraint firstItem="zfC-Zc-TC5" firstAttribute="centerX" secondItem="4d3-SD-M6T" secondAttribute="centerX" id="pnL-s6-h5Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pqv-JI-zKn" secondAttribute="trailing" constant="22" id="vij-nl-gSU" userLabel="trailingMargin = Score Label.trailing + 26"/>
                         </constraints>
                         <connections>
@@ -206,7 +207,7 @@
                         <viewControllerLayoutGuide type="top" id="10j-iQ-dvZ"/>
                         <viewControllerLayoutGuide type="bottom" id="o8k-Xy-5eA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Dxl-fp-CiM" userLabel="Root">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Dxl-fp-CiM" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -247,7 +248,7 @@
                                     <constraint firstItem="yxR-Su-Ygn" firstAttribute="centerY" secondItem="ZA5-YF-0wc" secondAttribute="centerY" id="pjN-14-lKB"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-lQ-dvt">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-lQ-dvt">
                                 <rect key="frame" x="12" y="68" width="351" height="485"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -317,7 +318,8 @@
                                 </constraints>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Oah-YW-gmL" firstAttribute="leading" secondItem="Lgd-Ga-seq" secondAttribute="trailing" constant="35" id="2X4-BF-cuQ"/>
@@ -361,7 +363,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovp-Ls-PrT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k1A-3c-F3o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -381,4 +383,5 @@
         <image name="ic_account_circle" width="24" height="24"/>
         <image name="play" width="68" height="75"/>
     </resources>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -8,6 +8,7 @@
 
 
 //
+import Foundation
 
 enum PlayerState {
     case active
@@ -33,12 +34,15 @@ struct SmashTagUser {
     var gamePlayerName : String  // person buying a drink if "won"
                                        // person you owe a drink if "lost"
                                        // need a reset to replay
+    var score : Int32
     
     let pictURL : String?  // optional as this is not required
     
     //  game partner
 
     let imageURL : String? = nil
+    
+    var photo : Data? = nil
     
     // MARK: Initializers
     
@@ -57,7 +61,11 @@ struct SmashTagUser {
         
         gamePlayerName = dictionary[Constants.PlayerFields.gamePlayerName] != nil ? dictionary[Constants.PlayerFields.gamePlayerName] as String! : ""
         
+        score = dictionary[Constants.PlayerFields.score] != nil ? Int32(dictionary[Constants.PlayerFields.score]!)! : 0
+        
         pictURL = dictionary[Constants.PlayerFields.pictURL] != nil ? dictionary[Constants.PlayerFields.pictURL] as String! : ""
+        
+        photo = Data.init()
 
     }
     

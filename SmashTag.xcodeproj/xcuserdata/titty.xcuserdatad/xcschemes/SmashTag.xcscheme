@@ -85,6 +85,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "SmashTag"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
