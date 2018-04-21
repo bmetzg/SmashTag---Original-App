@@ -9,7 +9,6 @@ pod 'Firebase/Database'
 pod 'Firebase/RemoteConfig'
 pod 'FirebaseUI'
 
-source 'https://github.com/CocoaPods/Specs.git'
 target 'SmashTag' do
     pod 'GooglePlaces'
     pod 'GooglePlacePicker'

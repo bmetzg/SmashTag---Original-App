@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F5A53781ADE67D500F81DF0"
                BuildableName = "SmashTag.app"
-               BlueprintName = "SmashTag"
+               BlueprintName = "SmashTag New"
                ReferencedContainer = "container:SmashTag.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -34,7 +35,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F5A53781ADE67D500F81DF0"
             BuildableName = "SmashTag.app"
-            BlueprintName = "SmashTag"
+            BlueprintName = "SmashTag New"
             ReferencedContainer = "container:SmashTag.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -45,6 +46,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -57,7 +59,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F5A53781ADE67D500F81DF0"
             BuildableName = "SmashTag.app"
-            BlueprintName = "SmashTag"
+            BlueprintName = "SmashTag New"
             ReferencedContainer = "container:SmashTag.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,7 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F5A53781ADE67D500F81DF0"
             BuildableName = "SmashTag.app"
-            BlueprintName = "SmashTag"
+            BlueprintName = "SmashTag New"
             ReferencedContainer = "container:SmashTag.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

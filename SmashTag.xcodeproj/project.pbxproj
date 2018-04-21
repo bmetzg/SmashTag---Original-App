@@ -44,9 +44,11 @@
 		56FC77C41EE5DD22007E2230 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C31EE5DD22007E2230 /* GameViewController.swift */; };
 		56FC77C61EE5DD27007E2230 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C51EE5DD27007E2230 /* AppDelegate.swift */; };
 		56FC77C81EE5DD2D007E2230 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC77C71EE5DD2D007E2230 /* Constants.swift */; };
+		C9A57CC03C90220F582399E1 /* Pods_SmashTag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA9C47A0612E7BBC8ADFE24 /* Pods_SmashTag.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EA9C47A0612E7BBC8ADFE24 /* Pods_SmashTag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmashTag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56176D331EF1E95600DC43A1 /* SmashTagPlayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmashTagPlayers.swift; sourceTree = SOURCE_ROOT; };
 		563BE5041EE7048F00309758 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		563BE5051EE7048F00309758 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A57CC03C90220F582399E1 /* Pods_SmashTag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +263,7 @@
 		9AD5D3AA9FEE4AAC1BAC7C5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EA9C47A0612E7BBC8ADFE24 /* Pods_SmashTag.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,9 +271,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F5A53781ADE67D500F81DF0 /* SmashTag */ = {
+		5F5A53781ADE67D500F81DF0 /* SmashTag New */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F5A53991ADE67D500F81DF0 /* Build configuration list for PBXNativeTarget "SmashTag" */;
+			buildConfigurationList = 5F5A53991ADE67D500F81DF0 /* Build configuration list for PBXNativeTarget "SmashTag New" */;
 			buildPhases = (
 				77C29CB188171CE63340450F /* [CP] Check Pods Manifest.lock */,
 				5F5A53751ADE67D500F81DF0 /* Sources */,
@@ -282,7 +286,7 @@
 			);
 			dependencies = (
 			);
-			name = SmashTag;
+			name = "SmashTag New";
 			productName = FriendlyPingSwift;
 			productReference = 5F5A53791ADE67D500F81DF0 /* SmashTag.app */;
 			productType = "com.apple.product-type.application";
@@ -329,7 +333,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F5A53781ADE67D500F81DF0 /* SmashTag */,
+				5F5A53781ADE67D500F81DF0 /* SmashTag New */,
 			);
 		};
 /* End PBXProject section */
@@ -595,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F5A53991ADE67D500F81DF0 /* Build configuration list for PBXNativeTarget "SmashTag" */ = {
+		5F5A53991ADE67D500F81DF0 /* Build configuration list for PBXNativeTarget "SmashTag New" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F5A53951ADE67D500F81DF0 /* Debug */,
